@@ -27,7 +27,16 @@ app.post('/audify', async (req, res) => {
 
       const { track_id, route_id } = body.data.tracks[0]
 
-      res.send(`https://audius.co/${route_id}-${track_id}`)
+      const link = `https://audius.co/${route_id}-${track_id}`
+      res.json(
+        {
+          "parse": "full",
+          "response_type": "in_channel",
+          "text": `<${link}>`,
+          "unfurl_media": true,
+          "unfurl_links": true
+         }
+      )
   })
 })
 
