@@ -32,7 +32,7 @@ app.post('/audify', async (req, res) => {
         {
           "parse": "full",
           "response_type": "in_channel",
-          "text": `<${link}>`,
+          "text": `${link}`,
           "unfurl_media": true,
           "unfurl_links": true
          }
